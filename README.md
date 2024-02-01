@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+## Inspiration
+Many UCI students searching for housing often fall victim to rental scams. With this project, our group aims to develop a tool that allows students to prevent housing scams by first asking for proof of ownership from homeowners. Below are links to articles of some unfortunate instances of UCI student renters being subject to rental fraud scams while trying to get student housing.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Housing Scam through Facebook Groups](https://www.reddit.com/r/UCI/comments/wrogkn/housing_scams_beware_of_facebook_group_uc_irvine/)
 
-## Available Scripts
+[Rental Scam Posting on Apartments.com](https://www.reddit.com/r/UCI/comments/15arz1r/beware_of_rental_scams/)
 
-In the project directory, you can run:
+[Fake Student Housing Listings](https://www.reddit.com/r/UCI/comments/smei7c/housing_scam_alert/)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## What it does
+Resify helps prevent rental scams by generating property certificates of verified homeowners using the Melissa API. Users can enter a unique code provided to them by a homeowner to view a certificate verifying the property ownership. Resify employs a two-layered verification procedure for homeowners to become a verified owner of a property. The first layer involves checking the homeowner's identity using the SSN-Name Verify Web API, then comparing their property address and name to the actual property deed owner name to ensure a match using the Melissa Property Web API. The second layer of verification involves using Melissa's Global IP Web API and Reverse GeoCoder Web API where homeowners need to be physically inside the property they want to verify. After verification is passed, the owner will receive a code distinct to their property that we randomly generate to share with potential renters or other users to prove ownership.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## How we built it
+Our backend was built with NodeJS for the API implementation, and MongoDB in Python for the database, while our frontend was developed using TypeScript, React, NextJS, Clerk, and Tailwind CSS.
 
-### `npm test`
+## Challenges we ran into
+We ran into several challenges during development, including issues with our font implementations causing various errors in our frontend interface, figuring out how to link our frontend interface to our backend, routing different pages on our website, as well as with attempting to get UI to function as intended. However, in the end, we were able to iron out most of these problems and deploy a working property verification service.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Accomplishments that we're proud of
+Combined Group Total of 0 mg of caffeine consumed. On a real note, we are proud of the overall functionality and UI/UX design of our web app, the value it provides to prospective property owners and renters, as well as all the web development skills we learned while overcoming challenges along the way. 
 
-### `npm run build`
+## What we learned
+We learned not only about how to operate on no sleep, but also about the benefits and drawbacks of various frontend frameworks and APIs as we tried utilizing several along the way before settling on our current stack. We also expanded our knowledge on building a backend and connecting our database to work seamlessly with both the API implementation and our web application's frontend interface.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## What's next for Resify
+To launch Resify at full scale, we plan to deploy to a publicly available website and showcase its value of preventing users such as college students as well as people in general looking to rent properties from getting scammed by individuals falsely claiming to be homeowners. Resify also has plans to utilize Web3 and blockchain technology to add another layer of security to our verification method by creating unique NFT tokens for each homeowner's certificates we generate.
